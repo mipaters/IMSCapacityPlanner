@@ -53,7 +53,11 @@ export default function App() {
         </div>
         <div className="p-6">
           <Routes>
-            <Route path="/" element={<Walkthrough />} />`n            <Route path="/dashboard" element={<Dashboard />} />`n            <Route path="/scenario" element={<Scenario />} />`n            <Route path="/agents" element={<Agents />} />`n            <Route path="/architecture" element={<Architecture />} />
+            <Route path="/" element={<Walkthrough />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/scenario" element={<Scenario />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/architecture" element={<Architecture />} />
             <Route path="/forecast" element={<Forecast />} />
             <Route path="/simulator" element={<Simulator />} />
             <Route path="/capex" element={<Capex />} />
