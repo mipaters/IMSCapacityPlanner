@@ -1,13 +1,21 @@
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { Activity, BarChart3, LineChart as LineIcon, RotateCcw, ShieldAlert, Wallet } from 'lucide-react'
+import { Activity, BarChart3, Bot, Layers, PlayCircle, Presentation, LineChart as LineIcon, RotateCcw, ShieldAlert, Wallet } from 'lucide-react'
 import { useStore } from './store/useStore'
 import Dashboard from './pages/Dashboard'
 import Forecast from './pages/Forecast'
 import Simulator from './pages/Simulator'
 import Capex from './pages/Capex'
+import Walkthrough from './pages/Walkthrough'
+import Agents from './pages/Agents'
+import Architecture from './pages/Architecture'
+import Scenario from './pages/Scenario'
 
 const NAV = [
-  { to: '/', label: 'Capacity Dashboard', icon: BarChart3 },
+  { to: '/', label: 'Executive Walkthrough', icon: Presentation },
+  { to: '/scenario', label: 'Live Scenario', icon: PlayCircle },
+  { to: '/agents', label: 'AI Agents', icon: Bot },
+  { to: '/architecture', label: 'Architecture', icon: Layers },
+  { to: '/dashboard', label: 'Capacity Dashboard', icon: BarChart3 },
   { to: '/forecast', label: 'Demand Forecast', icon: LineIcon },
   { to: '/simulator', label: 'Failure Simulator', icon: ShieldAlert },
   { to: '/capex', label: 'Capex Planner', icon: Wallet },
@@ -45,7 +53,11 @@ export default function App() {
         </div>
         <div className="p-6">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Walkthrough />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/scenario" element={<Scenario />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/architecture" element={<Architecture />} />
             <Route path="/forecast" element={<Forecast />} />
             <Route path="/simulator" element={<Simulator />} />
             <Route path="/capex" element={<Capex />} />
